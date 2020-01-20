@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <!-- this is the collapsed layout -->
+        <RelativeLayout
+            android:id="@+id/layoutCollapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp">
+
+                <ImageView
+                    android:id="@+id/collapsed_iv"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/language"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/closeButtonCollasped"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="47dp"
+                android:src="@drawable/close" />
+        </RelativeLayout>
+
+        <!-- this is the expanded layout -->
+        <RelativeLayout
+            android:id="@+id/layoutExpanded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_background"
+            android:visibility="visible">
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="English:"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+
+                <EditText
+                    android:id="@+id/englishInput"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Input"
+                    android:textSize="16dp"
+                    android:textIsSelectable="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Korean:"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/koreanInput"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Input"
+                    android:textSize="16dp"
+                    android:textIsSelectable="true"/>
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/linear"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/verbRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verb"
+                    android:textSize="15dp"/>
+                <RadioButton
+                    android:id="@+id/adjectiveRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adjective"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="3dp"/>
+                <RadioButton
+                    android:id="@+id/nounRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Noun"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="3dp"/>
+                <RadioButton
+                    android:id="@+id/otherRB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="3dp"/>
+            </RadioGroup>
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add to vocab list"
+                android:textSize="13sp"
+                android:layout_below="@+id/radioGroup"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
